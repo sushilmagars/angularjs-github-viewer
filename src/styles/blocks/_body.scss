@@ -1,4 +1,14 @@
 body {
 	// http://stackoverflow.com/questions/14735274/bootstrap-css-hides-portion-of-container-below-navbar-navbar-fixed-top
-	padding-top: $application-body-padding-top; // for fixing navbar-fix-top issue
+	// padding-top: $application-body-padding-top; // for fixing navbar-fix-top issue
+
+	background-color: #f4f7f6
+}
+
+app-header {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+
+	.block-header {
+		padding: 15px;
+	}
 }
