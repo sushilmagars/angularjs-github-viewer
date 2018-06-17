@@ -8,15 +8,15 @@ export default class githubViewerService {
     this._ = _;
     this.$q = $q;
     this.$http = $http;
-    this.baseUrl = 'https://api.github.com/search/repositories?q=';  
+    this.baseUrl = 'https://api.github.com/search';  
   }
 
-  getUrl(term) {
-    return this.baseUrl + term;
+  getUrl(urlFragment, term) {
+    return `${this.baseUrl}${urlFragment}${term}`
   }
 
-  searchRepository(term) {
-    return this.$http.get(this.getUrl(term))
+  get(urlFragment, term) {
+    return this.$http.get(this.getUrl(urlFragment, term))
       .then((response) => this.handleReponse(response))
   }
 

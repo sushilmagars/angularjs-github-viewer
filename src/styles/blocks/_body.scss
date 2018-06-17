@@ -2,19 +2,46 @@ body {
 	// http://stackoverflow.com/questions/14735274/bootstrap-css-hides-portion-of-container-below-navbar-navbar-fixed-top
 	// padding-top: $application-body-padding-top; // for fixing navbar-fix-top issue
 
-	background-color: #f4f7f6
+	background-color: #f4f7f6;
 }
 
 app-github-viewer {
-	font-family: "Segoe UI", "Roboto" ,"Helvetica Neue", "Arial,sans-serif" ,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-
+	
+	.header {
+		background-color: #459fad; 
+	}
+	
 	.block-header {
 		padding: 15px;
+
+		.header-title {
+			color: #f4f7f6
+		}
 
 		.search {
 			.search-bar:hover, .search-btn:hover {
 				border-color: black;			
 			}
+
+			.search-btn {
+				margin-left: 15px;
+			}
 		}
+	}
+
+	.display-cards {
+		padding: 15px;
+
+		.card-title {
+			.card-body {
+				.card-title img {
+					border-radius: 15px;
+				}
+			}
+		}	
+	}
+
+	.issue-navigation {
+		padding: 15px;
 	}
 }
