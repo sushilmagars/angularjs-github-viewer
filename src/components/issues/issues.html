@@ -1,31 +1,23 @@
 <div class="container issue-navigation" ng-if="$ctrl.allIssues">
   <table class="table">
-    <thead>
-      <tr>
-      <th scope="col">Reported by</th>
-      <th scope="col">Title</th>
-      <th scope="col">Status</th>
-      <th scope="col">Created Date</th>
-      </tr>
-    </thead>
-    <tbody ng-repeat="issue in $ctrl.allIssues track by $index">
-      <tr>
-      <td>
-        <img 
-          alt="{{issue.user.login}}" 
-          ng-src={{issue.user.avatar_url}} 
-          height="40" 
-          width="40"
-          title="{{issue.user.login}}">
-      </td>
-      <td>
-        <p><a ng-href="{{issue.html_url}}">{{issue.title}}</a></p>
-      </td>
-      <td>
-        <span class="badge badge-success" ng-if="issue.state == 'closed'">{{issue.state | uppercase}}</span>
-        <span class="badge badge-warning" ng-if="issue.state == 'open'">{{issue.state | uppercase}}</span></td>
-      <td>{{issue.created_at | date}}</td>
-      </tr>
-    </tbody>
+      <thead>
+        <tr>
+            <th scope="col">Reported by</th>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
+            <th scope="col">Created Date</th>
+        </tr>
+      </thead>
+      <tbody ng-repeat="issue in $ctrl.allIssues track by $index">
+        <tr>
+            <td><img alt="{{issue.user.login}}" ng-src={{issue.user.avatar_url}} height="40" width="40" title="{{issue.user.login}}"></td>
+            <td><p><a ng-href="{{issue.html_url}}">{{issue.title}}</a></p></td>
+            <td>
+              <span class="badge badge-success" ng-if="issue.state == 'closed'">{{issue.state | uppercase}}</span>
+              <span class="badge badge-warning" ng-if="issue.state == 'open'">{{issue.state | uppercase}}</span>
+            </td>
+            <td>{{issue.created_at | date}}</td>
+        </tr>
+      </tbody>
   </table>
 </div>

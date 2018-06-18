@@ -8,12 +8,7 @@
 						 <div class="col-sm-12 col-md-7 col-lg-5">
 								<form name="repositorySearch" ng-submit="repositorySearch.$valid && $ctrl.submit()">
 									 <div class="input-group pull-right search">
-											<input 
-												 type="text" 
-												 class="form-control search-bar" 
-												 placeholder="search"
-												 ng-model="$ctrl.searchTerm"
-												 required>
+											<input type="text" class="form-control search-bar" placeholder="search" ng-model="$ctrl.searchTerm" required>
 											<span class="input-group-btn">
 											<button class="btn btn-default search-btn" type="submit">Go!</button>
 											</span>
@@ -39,12 +34,7 @@
 					<h5 class="card-title"></h5>
 					<p class="card-text">About {{$ctrl.repository.forksCount}} impressive forks.</p>
 					<div class="charts">
-						 <canvas 
-								id="pie" 
-								class="chart chart-pie"
-								chart-data="data" 
-								chart-labels="labels" 
-								chart-options="options">
+						 <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options">
 						 </canvas>
 					</div>
 			 </div>

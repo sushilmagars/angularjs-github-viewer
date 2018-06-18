@@ -1,26 +1,23 @@
 <div class="card text-center">
   <div class="card-header">
-    <h2>{{$ctrl.items.name}}</h2>
+      <h2>{{$ctrl.items.name}}</h2>
   </div>
   <div class="card-body">
-    <h5 class="card-title">
+      <h5 class="card-title">
         <img ng-src={{$ctrl.items.avatar}} height="200" width="200">
-    </h5>
-    <p class="card-text">{{$ctrl.items.description}}</p>
-    <a ng-href={{$ctrl.items.url}} class="btn btn-primary" target="_blank">Go to repository</a>
+      </h5>
+      <p class="card-text">{{$ctrl.items.description}}</p>
+      <a ng-href={{$ctrl.items.url}} class="btn btn-primary" target="_blank">Go to repository</a>
   </div>
   <div class="card-footer text-muted">
-    <button type="button" class="btn btn-info">Forks
-      <span class="badge badge-light">{{$ctrl.items.forksCount}}</span>
-      <span class="sr-only">unread messages</span>
-    </button>
-    <button type="button" class="btn btn-info">Open Issues
-      <span class="badge badge-light">{{$ctrl.items.openIssuesCount}}</span>
-      <span class="sr-only">unread messages</span>
-    </button>
-    <button type="button" class="btn btn-info">Stargazers
-      <span class="badge badge-light">{{$ctrl.items.stargazersCount}}</span>
-      <span class="sr-only">unread messages</span>
-    </button>
+      <button type="button" class="btn btn-info">Forks
+        <span class="badge badge-light">{{$ctrl.items.forksCount}}</span>
+      </button>
+      <button type="button" class="btn btn-info">Open Issues
+        <span class="badge badge-light">{{$ctrl.items.openIssuesCount}}</span>
+      </button>
+      <button type="button" class="btn btn-info">Stargazers
+        <span class="badge badge-light">{{$ctrl.items.stargazersCount}}</span>
+      </button>
   </div>
 </div>
