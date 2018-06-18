@@ -25,34 +25,7 @@
 		</div>
  </div>
  <error-handler show-error="$ctrl.shouldShowError" error-message="$ctrl.errorMessage"></error-handler>
- <div class="container display-cards" ng-if="$ctrl.repository">
-		<div class="card text-center">
-			 <div class="card-header">
-					<h2>{{$ctrl.repository.name}}</h2>
-			 </div>
-			 <div class="card-body">
-					<h5 class="card-title">
-						 <img ng-src={{$ctrl.repository.avatar}} height="200" width="200">
-					</h5>
-					<p class="card-text">{{$ctrl.repository.description}}</p>
-					<a ng-href={{$ctrl.repository.url}} class="btn btn-primary" target="_blank">Go to repository</a>
-			 </div>
-			 <div class="card-footer text-muted">
-					<button type="button" class="btn btn-info">Forks
-					<span class="badge badge-light">{{$ctrl.repository.forksCount}}</span>
-					<span class="sr-only">unread messages</span>
-					</button>
-					<button type="button" class="btn btn-info">Open Issues
-					<span class="badge badge-light">{{$ctrl.repository.openIssuesCount}}</span>
-					<span class="sr-only">unread messages</span>
-					</button>
-					<button type="button" class="btn btn-info">Stargazers
-					<span class="badge badge-light">{{$ctrl.repository.stargazersCount}}</span>
-					<span class="sr-only">unread messages</span>
-					</button>
-			 </div>
-		</div>
- </div>
+ <lists repository="$ctrl.repository"></lists>
  <display-issues issues="$ctrl.allIssues"></display-issues>
  <nav ng-if="$ctrl.allIssues" aria-label="Page navigation example">
 		<ul class="pagination justify-content-center">
