@@ -30,7 +30,6 @@
  <nav ng-if="$ctrl.allIssues" aria-label="Page navigation example">
 		<ul class="pagination justify-content-center">
 			 <a class="page-link" href="#" ng-click="$ctrl.setIssues()">Show More</a>
-			 </li>
 		</ul>
  </nav>
  <div class="container chart-container">
@@ -51,4 +50,3 @@
 			 </div>
 		</div>
  </div>
- <charts forks-count="$ctrl.repository.forksCount" open-issues="$ctrl.repository.openIssuesCount" stargazers="$ctrl.repository.stargazersCount"></charts>
