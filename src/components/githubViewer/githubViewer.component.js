@@ -34,7 +34,6 @@ class headerCtrl {
 			})
 			.then(([repositories, issues]) => this.handleSuccessResponse(repositories, issues))
 			.catch((err) => {
-				// console.log('Error:::', err);
 				return this.handleErrorResponse(err);
 			})
 	}
@@ -54,7 +53,8 @@ class headerCtrl {
 			stargazersCount: this._.get(repositories, 'items[0].stargazers_count'),
 		};
 
-		this.shouldShowError = false; // set false after search is successful
+		// set false after search is successful
+		this.shouldShowError = false;
 
 		// set chart values
 		this.$scope.labels = ["Fork Counts", "Open Issues", "Stargazers"];
@@ -62,10 +62,13 @@ class headerCtrl {
 	}
 
 	handleErrorResponse(err) {
-		// console.log(err);
-
 		this.shouldShowError = true;
-		this.errorMessage = this._.get(err, 'data.errors[0].message');
+		
+		if (err.total_count <= 0) {
+			this.errorMessage = `Could not find the repository with name ${this.searchTerm}`;
+		} else {
+			this.errorMessage = this._.get(err, `data.errors[0].message`);
+		}
 	}
 
 	setIssues(issues) {
