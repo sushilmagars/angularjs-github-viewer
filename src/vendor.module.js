@@ -6,3 +6,5 @@ import 'jquery';
 import 'popper.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'angular-ui-router';
+import 'angular-chart.js';
+import 'Chart.js';

@@ -41,6 +41,23 @@ app-github-viewer {
 		}	
 	}
 
+	.chart-container {
+		padding: 20px;
+		
+		.chart-card {
+			width: 100%;
+	
+			.charts {
+				padding: 10px;
+	
+				.chart-line {
+					height: 700px;
+					width: 700px;
+				}
+			}
+		}
+	}
+
 	.issue-navigation {
 		padding: 15px;
 	}

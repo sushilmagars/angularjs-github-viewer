@@ -37,8 +37,10 @@
   },
   "dependencies": {
     "angular": "^1.6.5",
+    "angular-chart.js": "^1.1.1",
     "angular-ui-router": "^1.0.3",
     "bootstrap": "^4.1.1",
+    "chart.js": "^2.7.2",
     "font-awesome": "4.7.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.10",

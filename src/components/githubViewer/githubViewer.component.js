@@ -1,10 +1,11 @@
 import _ from 'lodash';
 
 class headerCtrl {
-	constructor($q, commonService, $state, $timeout) {
+	constructor($q, $scope, commonService, $state, $timeout) {
 		'ngInject';
 
 		this._ = _;
+		this.$scope = $scope;
 		this.$q = $q;
 		this.$state = $state;
 		this.$timeout = $timeout;
@@ -54,10 +55,15 @@ class headerCtrl {
 		};
 
 		this.shouldShowError = false; // set false after search is successful
+
+		// set chart values
+		this.$scope.labels = ["Fork Counts", "Open Issues", "Stargazers"];
+		this.$scope.data = [this.repository.forksCount, this.repository.openIssuesCount, this.repository.stargazersCount];
 	}
 
 	handleErrorResponse(err) {
-		console.log(err);
+		// console.log(err);
+
 		this.shouldShowError = true;
 		this.errorMessage = this._.get(err, 'data.errors[0].message');
 	}

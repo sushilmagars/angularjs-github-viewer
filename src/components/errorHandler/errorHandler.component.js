@@ -5,7 +5,6 @@ class errorHandlerCtrl {
   }
 
   $onChanges() {
-    console.log('error handler', this.errorMessage);
     this.errMessage = this.errorMessage;
     this.shouldShowError = this.showError;
   }
