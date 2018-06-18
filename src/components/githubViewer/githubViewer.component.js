@@ -53,7 +53,7 @@ class headerCtrl {
 			stargazersCount: this._.get(repositories, 'items[0].stargazers_count'),
 		};
 
-		// set false after search is successful
+		// should not show error after search is successful
 		this.shouldShowError = false;
 
 		// set chart values
