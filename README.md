@@ -9,5 +9,3 @@ Node 6.x.x, Yarn
 1. Clone Project.
 2. Do `yarn install` to install all dependencies.
 3. Finally `yarn start` to run project.
-
-![ScreenShot](https://{avatars3.githubusercontent.com/u/139426?v=4})
