@@ -9,4 +9,4 @@ Node 6.x.x, Yarn
 1. Clone Project.
 2. Do `yarn install` or `npm install` to install all dependencies.
 3. Finally `yarn start` or `npm start` to run project.
-4. Go to `http://localhost:3000/`
+4. Go to `http://localhost:3000/` on browser
