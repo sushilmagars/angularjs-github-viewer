@@ -1,7 +1,7 @@
 
 import _ from 'lodash';
 
-export default class githubViewerService {
+export default class commonService {
   constructor($q, $http) {
 		'ngInject';
     

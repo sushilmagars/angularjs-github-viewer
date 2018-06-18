@@ -1,29 +1,27 @@
 import _ from 'lodash';
 
 class headerCtrl {
-	constructor($q, githubViewerService, $state, $timeout) {
+	constructor($q, commonService, $state, $timeout) {
 		'ngInject';
 
 		this._ = _;
 		this.$q = $q;
 		this.$state = $state;
 		this.$timeout = $timeout;
-		this.githubViewerService = githubViewerService;
-	}
-
-	$onInit() {
-		console.log('$onInit', this.$rootScope);
+		this.commonService = commonService;
 	}
 
 	getRepositories() {
-		return this.githubViewerService.get('/repositories?q=', this.searchTerm);
+		return this.commonService.get('/repositories?q=', this.searchTerm);
 	}
 
 	getIssues() {
-		return this.githubViewerService.get(`/issues?q=repo:${this.username}/`, this.searchTerm);
+		return this.commonService.get(`/issues?q=repo:${this.username}/`, this.searchTerm);
 	}
 
 	submit() {
+		this.shouldShowError = false;
+
 		return this.getRepositories()
 			.then((res) => {
 				this.username = this._.get(res, 'items[0].owner.login');
@@ -35,15 +33,13 @@ class headerCtrl {
 			})
 			.then(([repositories, issues]) => this.handleSuccessResponse(repositories, issues))
 			.catch((err) => {
-				console.log('nah error:::', err);
+				// console.log('Error:::', err);
 				return this.handleErrorResponse(err);
 			})
 	}
 
 	handleSuccessResponse(repositories, issues) {
 		this.allIssues = this.setIssues(issues);
-		console.log(issues);
-		console.log(this.allIssues);
 
 		this.repository = {
 			name: this._.upperFirst(this._.get(repositories, 'items[0].name')),
@@ -57,29 +53,26 @@ class headerCtrl {
 			stargazersCount: this._.get(repositories, 'items[0].stargazers_count'),
 		};
 
-		console.log(this.repository)
+		this.shouldShowError = false; // set false after search is successful
 	}
 
 	handleErrorResponse(err) {
-
+		console.log(err);
+		this.shouldShowError = true;
+		this.errorMessage = this._.get(err, 'data.errors[0].message');
 	}
 
 	setIssues(issues) {
-		console.log('issues exist?', Boolean(issues));
 		if (issues) {
 			this.start = 0;
 			this.end = 10;
 			return issues.items.slice(this.start, this.end);
 		} else {
-			console.log(this.start)
-			console.log(this.end)
-
 			this.start = this.end;
 			this.end += 10; // take next 10
 
 			this.getIssues()
 				.then((res) => {
-					console.log(res.items.slice(this.start, this.end));
 					this.allIssues = res.items.slice(this.start, this.end);
 				}
 			)
