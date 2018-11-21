@@ -1,6 +1,8 @@
 # Github viewer
-
-This repo contains `webpack`, `AngularJS`, `ES6` and `Bootstrap 4`starter kit.
+Built a Github viewer in AngularJs using a starter kit.
+- Search github repositories by name of the repository
+- Lists of open issues, reported by, status of the issue etc.
+- Uses `ChartsJs` to showcase open issues, fork counts, stargazer counts information on a chart.
 
 ### Prerequisites
 Node 6.x.x, Yarn
